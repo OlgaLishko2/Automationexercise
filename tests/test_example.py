@@ -1,10 +1,7 @@
-import pytest
-from playwright.sync_api import sync_playwright
 
-def test_title():
-    with sync_playwright() as p:
-        browser = p.chromium.launch(headless=False)  # headless=True to hide browser
-        page = browser.new_page()
-        page.goto("https://example.com")
-        assert "Example Domain" in page.title()
-        browser.close()
+from config.links import Links
+
+def test_title(page):
+    page.goto(Links.HOST)
+    assert "Automation Exercise" in page.title()
+

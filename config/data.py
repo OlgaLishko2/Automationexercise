@@ -7,3 +7,5 @@ class Data:
 
     LOGIN = os.getenv("LOGIN")
     PASSWORD = os.getenv("PASSWORD")
+
+    # pip install python - dotenv   - run in terminal
